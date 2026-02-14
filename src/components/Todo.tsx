@@ -41,7 +41,7 @@ const TodoList=()=>{
 
             <button onClick={addElement}>Ajouter une tâche</button>
 
-            <ol>
+            <ul>
                 {todo.map((todo) => (
                     <li key={todo.id}>
                         <input
@@ -49,12 +49,12 @@ const TodoList=()=>{
                             checked={todo.finished}
                             onChange={() => finishedChange(todo.id)}
                         />
-                        <span style={{ textDecoration: todo.finished ? 'line-through' : 'none', 'color':'blue'}}>
+                        <span style={{ textDecoration: todo.finished ? 'line-through' : 'none', color:todo.finished? 'red':'blue'}}>
                  {todo.text}
                </span>
                     </li>
                 ))}
-            </ol>
+            </ul>
         </div>
     );
 };
